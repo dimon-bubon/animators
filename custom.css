@@ -1,0 +1,75 @@
+:root {
+  --brand: #7c3aed;
+  --brand-hover: #6d28d9;
+  --brand-active: #5b21b6;
+
+  --bs-primary: var(--brand);
+  --bs-primary-rgb: 124, 58, 237;
+  --bs-link-color: var(--brand-hover);
+  --bs-link-hover-color: var(--brand-active);
+}
+
+
+.btn-primary {
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand-hover);
+  --bs-btn-hover-border-color: var(--brand-hover);
+  --bs-btn-active-bg: var(--brand-active);
+  --bs-btn-active-border-color: var(--brand-active);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand);
+  --bs-btn-hover-border-color: var(--brand);
+  --bs-btn-active-bg: var(--brand-hover);
+  --bs-btn-active-border-color: var(--brand-hover);
+}
+
+
+html {
+  scroll-padding-top: 70px; /* отступ под закреплённую шапку при переходе по якорям */
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+.hero {
+  background: linear-gradient(135deg, #f3e8ff, #fef3c7);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+}
+
+
+
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade,
+  .carousel-item,
+  .collapsing {
+    transition: none !important;
+  }
+}
