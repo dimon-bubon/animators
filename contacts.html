@@ -27,6 +27,7 @@
   <body class="bg-light">
     <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
 
+    <!-- Шапка: навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">🎈 Конфетти</a>
@@ -62,6 +63,7 @@
     <main id="main" class="container my-5">
       <h1 class="h2 mb-4">Контакты и заявка</h1>
       <div class="row g-4">
+        <!-- Форма заявки -->
         <div class="col-12 col-lg-7" id="order">
           <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
@@ -81,6 +83,7 @@
                       placeholder=""
                       required
                     >
+                    <div class="invalid-feedback">Укажите имя</div>
                   </div>
                   <div class="col-12 col-md-6">
                     <label for="c-email" class="form-label">E-mail *</label>
@@ -89,22 +92,35 @@
                       name="c-email"
                       type="email"
                       class="form-control"
-                      placeholder=""
+                      placeholder="name@example.com"
+                      maxlength="254"
+                      pattern="[^\s@]+@[^\s@]+\.[A-Za-zА-Яа-яЁё]{2,}"
+                      autocomplete="email"
                       required
                     >
+                    <div class="invalid-feedback">
+                      Введите корректный e-mail, например name@example.com
+                    </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <label for="c-phone" class="form-label">Телефон *</label>
-                    <div class="input-group">
+                    <div class="input-group has-validation">
                       <span class="input-group-text">+7</span>
                       <input
                         id="c-phone"
                         name="phone"
                         type="tel"
                         class="form-control"
-                        placeholder="900 000-00-00"
+                        placeholder="900 123-45-67"
+                        inputmode="numeric"
+                        maxlength="13"
+                        pattern="\d{3} \d{3}-\d{2}-\d{2}"
+                        autocomplete="tel-national"
                         required
                       >
+                      <div class="invalid-feedback">
+                        Введите 10 цифр номера, например 900 123-45-67
+                      </div>
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
@@ -166,12 +182,13 @@
           </div>
         </div>
 
+        <!-- Контакты и график работы -->
         <div class="col-12 col-lg-5">
           <div class="card shadow-sm mb-4">
             <div class="card-body">
               <h2 class="h5">Связаться с нами</h2>
               <p class="mb-1">
-                Телефон: <a href="tel:+74950000000" class="fw-bold">+7 (495) 000-00-00</a>
+                Телефон: <a href="tel:+78005553535" class="fw-bold">+7 (800) 555-35-35</a>
               </p>
               <p>E-mail: <a href="mailto:hello@konfetti.example">hello@konfetti.example</a></p>
               <div class="d-flex flex-wrap gap-2">
@@ -204,9 +221,33 @@
               </div>
             </div>
           </div>
+
+          <!-- Как нас найти: мини-карта -->
+          <div class="card shadow-sm mt-4" id="map">
+            <div class="card-body">
+              <h2 class="h5">Как нас найти</h2>
+              <p class="mb-3">📍 <strong>Адрес:</strong> Москва, Красная площадь, д. 3</p>
+              <div class="ratio ratio-4x3 rounded overflow-hidden bg-white mb-3">
+                <iframe
+                  class="border-0"
+                  title="Карта: офис «Конфетти», Москва, Красная площадь, д. 3"
+                  loading="lazy"
+                  allowfullscreen
+                  src="https://yandex.ru/map-widget/v1/?ll=37.6215%2C55.7547&amp;z=17&amp;pt=37.6215%2C55.7547%2Cpm2rdm"
+                ></iframe>
+              </div>
+              <a
+                class="btn btn-outline-primary"
+                href="https://yandex.ru/maps/?ll=37.6215%2C55.7547&amp;z=17&amp;pt=37.6215%2C55.7547"
+                target="_blank"
+                rel="noopener"
+              >Открыть в Яндекс Картах</a>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- FAQ -->
       <section class="my-5">
         <h2 class="h4 mb-3">Частые вопросы</h2>
         <div class="accordion" id="faqAccordion">
@@ -307,20 +348,54 @@
       </section>
     </main>
 
+    <!-- Подвал -->
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container">
-        <div class="row align-items-center g-3">
-          <div class="col-12 col-md-6">
-            <p class="mb-0">&copy; 2026 Конфетти — аниматоры на праздники. Учебный проект КР №2.</p>
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-4">
+            <a
+              class="fw-bold fs-5 text-white text-decoration-none"
+              href="index.html"
+            >🎈 Конфетти</a>
+            <p class="mb-2 mt-1">Аниматоры на праздники.</p>
+            <p class="mb-0 small text-white-50">&copy; 2026 Все права защищены.</p>
           </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
-            <a class="text-white text-decoration-none me-3" href="blog.html">Блог</a>
-            <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
+          <nav class="col-12 col-md-4 text-md-center" aria-label="Навигация в подвале">
+            <ul class="list-unstyled mb-0">
+              <li><a class="text-white text-decoration-none" href="catalog.html">Каталог</a></li>
+              <li><a class="text-white text-decoration-none" href="blog.html">Блог</a></li>
+              <li><a class="text-white text-decoration-none" href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="col-12 col-md-4 text-md-end">
+            <h2 class="h5">Связаться с нами</h2>
+            <p class="mb-1">
+              Телефон: <a href="tel:+78005553535" class="fw-bold link-light">+7 (800) 555-35-35</a>
+            </p>
+            <p class="mb-3">
+              E-mail: <a href="mailto:hello@konfetti.example" class="link-light">
+                hello@konfetti.example</a>
+            </p>
+            <div class="d-flex flex-wrap gap-2 justify-content-md-end">
+              <a class="btn btn-success btn-sm" href="#" aria-label="WhatsApp">WhatsApp</a>
+              <a class="btn btn-info btn-sm text-white" href="#" aria-label="Telegram">Telegram</a>
+              <a class="btn btn-primary btn-sm" href="#" aria-label="ВКонтакте">ВКонтакте</a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Кнопка «Наверх» -->
+    <button
+      class="to-top"
+      id="toTop"
+      type="button"
+      aria-label="Наверх"
+      title="Наверх"
+    >
+      <span aria-hidden="true">&uarr;</span>
+    </button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
