@@ -30,7 +30,6 @@
   <body class="bg-light">
     <a class="visually-hidden-focusable" href="#main">Перейти к содержимому</a>
 
-    <!-- Шапка: навигация -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">🎈 Конфетти</a>
@@ -59,12 +58,18 @@
             <li class="nav-item">
               <a class="nav-link" href="contacts.html">Контакты</a>
             </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <button id="themeToggle" class="theme-toggle" type="button"
+                aria-label="Включить тёмную тему" aria-pressed="false">
+                <span class="theme-icon" aria-hidden="true">🌙</span>
+                <span class="d-none d-xl-inline">Тёмная тема</span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero: оффер -->
     <header class="hero py-5">
       <div class="container">
         <div class="row align-items-center g-4">
@@ -90,7 +95,7 @@
       </div>
     </header>
     <main id="main">
-      <!-- Популярные программы -->
+
       <section class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="mb-0">Популярные программы</h2>
@@ -166,7 +171,6 @@
         </div>
       </section>
 
-      <!-- Топ аниматоров -->
       <section class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="mb-0">Топ аниматоров</h2>
@@ -275,7 +279,6 @@
         </div>
       </section>
 
-      <!-- Как это работает -->
       <section class="container my-5" id="how">
         <h2 class="text-center mb-4">Как это работает</h2>
         <div class="row g-4">
@@ -310,7 +313,6 @@
         </div>
       </section>
 
-      <!-- Преимущества -->
       <section class="container my-5" id="advantages">
         <header class="text-center mb-5">
           <h2>Почему родители выбирают «Конфетти»</h2>
@@ -390,7 +392,6 @@
         </div>
       </section>
 
-      <!-- Отзывы родителей -->
       <section class="container my-5">
         <h2 class="text-center mb-4">Отзывы родителей</h2>
         <div class="row justify-content-center">
@@ -452,7 +453,6 @@
       </section>
     </main>
 
-    <!-- Подвал -->
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container">
         <div class="row align-items-center g-4">
@@ -490,7 +490,6 @@
       </div>
     </footer>
 
-    <!-- Кнопка «Наверх» -->
     <button
       class="to-top"
       id="toTop"
